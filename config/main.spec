@@ -1,6 +1,13 @@
 # -*- mode: python ; coding: utf-8 -*-
+from PyInstaller.utils.hooks import collect_data_files
+from PyInstaller.utils.hooks import copy_metadata
 
 datas = []
+datas += copy_metadata('torch')
+datas += copy_metadata('tqdm')
+datas += copy_metadata('regex')
+datas += copy_metadata('requests')
+datas += copy_metadata('numpy')
 
 block_cipher = None
 
@@ -26,7 +33,7 @@ exe = EXE(
     a.scripts,
     [],
     exclude_binaries=True,
-    name='xxx-API',
+    name='Whisper-API',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,
@@ -47,5 +54,5 @@ coll = COLLECT(
     strip=False,
     upx=True,
     upx_exclude=[],
-    name='xxx-API',
+    name='Whisper-API',
 )

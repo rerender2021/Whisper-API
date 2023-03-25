@@ -1,0 +1,1 @@
+.\Whisper-API.exe --model-path ".\model\base.en.pt"
